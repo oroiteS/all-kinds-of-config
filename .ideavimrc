@@ -1,0 +1,80 @@
+" ---------- 1. 基础 Vim 兼容选项 ----------
+" 复制/删除内容默认进入系统剪贴板，可与外部 Ctrl+C/V 互通
+set clipboard=unnamedplus
+" 输入搜索词时实时高亮匹配，回车才最终定位
+set incsearch
+" 搜索字母时忽略大小写（若含大写字母则自动变敏感）
+set ignorecase
+" 把搜索结果一直高亮，直到下次搜索或手动 :noh
+set hlsearch
+" 左侧显示当前行绝对号，其余行显示与光标的相对距离，方便 5j 7k 之类跳跃
+set number relativenumber
+" 光标距离窗口顶部/底部不足 10 行时自动滚屏，保持上下文可见
+set scrolloff=10
+" 官方内置插件，按两次 <leader><leader>+字母即可快速跳转到屏幕任意字符
+set easymotion
+" 启用 surround 功能：cs"'（改引号）、ysiw]（加括号）、ds"（删引号）等
+set surround
+" 按下 <leader> 后弹出浮动提示窗，告诉你后面还能按什么，降低记忆负担
+set which-key
+" 启用超时并设置延时，便于 which-key 弹窗
+set timeout timeoutlen=500
+" 需要 ideavim-extension：退出插入模式时自动切回英文，再进入插入模式时恢复中文
+set keep-english-in-normal-and-restore-in-insert
+
+" ---------- 2. Leader 键与快速退出插入 ----------
+" 把空格设为 Leader 前缀，后面所有 <leader> 都指空格
+let mapleader = " "
+" 插入模式连续按 jj 等价于 Esc，手不离主行
+imap jj <Esc>
+
+" ---------- 3. 强制保存 ----------
+" 普通模式 Ctrl+S 触发 IDE 的 Save All，保证触发外部构建/热加载
+nnoremap <C-S> :action SaveAll<CR>
+
+" ---------- 4. 功能快捷键（普通模式） ----------
+" which-key 提示窗延时
+let g:WhichKey_DefaultDelay = 300
+
+" ----- 文件与导航 -----
+let g:WhichKeyDesc_leader_f = "<leader>f 全局搜索"
+nnoremap <leader>f :action FindInPath<CR>
+let g:WhichKeyDesc_leader_o = "<leader>o 文件大纲"
+nnoremap <leader>o :action FileStructurePopup<CR>
+let g:WhichKeyDesc_leader_u = "<leader>u 查找用法"
+nnoremap <leader>u :action FindUsages<CR>
+
+" ----- 代码编辑 -----
+let g:WhichKeyDesc_leader_r = "<leader>r 重命名"
+nnoremap <leader>r :action RenameElement<CR>
+let g:WhichKeyDesc_leader_a = "<leader>a 意图动作"
+nnoremap <leader>a :action ShowIntentionActions<CR>
+let g:WhichKeyDesc_leader_g = "<leader>g 代码生成"
+nnoremap <leader>g :action Generate...<CR>
+let g:WhichKeyDesc_leader_F = "<leader>F 格式化"
+nnoremap <leader>F :action ReformatCode<CR>
+
+" ----- 调试与窗口 -----
+let g:WhichKeyDesc_leader_b = "<leader>b 断点"
+nnoremap <leader>b :action ToggleLineBreakpoint<CR>
+let g:WhichKeyDesc_leader_w = "<leader>w 关闭标签"
+nnoremap <leader>w :action CloseActiveEditor<CR>
+let g:WhichKeyDesc_leader_h = "<leader>h 左标签"
+nnoremap <leader>h :action PreviousTab<CR>
+let g:WhichKeyDesc_leader_l = "<leader>l 右标签"
+nnoremap <leader>l :action NextTab<CR>
+let g:WhichKeyDesc_leader_v = "<leader>v 垂直分屏"
+nnoremap <leader>v :action SplitVertically<CR>
+let g:WhichKeyDesc_leader_s = "<leader>s 水平分屏"
+nnoremap <leader>s :action SplitHorizontally<CR>
+
+" ---------- 5. 其它贴心小映射 ----------
+" 新增：插入模式的居中键位方向移动（保持手不离主行）
+inoremap <C-l> <Right>
+inoremap <C-b> <Left>
+" 解决 insert 模式下空格触发 leader 键的问题
+inoremap <Space> <Space>
+" 复制闪高亮持续 400 ms
+let g:highlightedyank_highlight_duration = 400
+" 把原生的 Ex 模式入口 Q 改成格式化当前行/选区，防止误触
+map Q gq
