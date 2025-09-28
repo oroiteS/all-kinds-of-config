@@ -1,0 +1,165 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "icon_theme": "Material Icon Theme",
+  "file_types": {
+    // 文件类型指定
+    "JSONC": ["json"]
+  },
+
+  "languages": {
+    "Python": {
+      "language_servers": [
+        // Disable basedpyright and enable Ty, and otherwise
+        // use the default configuration.
+        "ty",
+        "!basedpyright"
+      ]
+    }
+  },
+
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+
+  // 代码补全
+  "show_completions_on_input": true, // 输入时显示补全
+
+  "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "gpt-5"
+    },
+    "model_parameters": []
+  },
+  "ssh_connections": [
+    {
+      "host": "github.com",
+      "args": [],
+      "projects": []
+    }
+  ],
+
+  "base_keymap": "VSCode",
+  "minimap": {
+    "show": "always"
+  },
+  "cursor_blink": true,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "restore_on_startup": "last_session",
+  "auto_indent_on_paste": true,
+  "use_on_type_format": true,
+  "soft_wrap": "editor_width",
+  "vim_mode": false,
+  // 界面字体
+  "ui_font_size": 16,
+  // 编辑器字体
+  "buffer_font_family": "Maple Mono NF CN", // 编辑器字体，推荐 JetBrains Mono，需要手动安装 https://www.jetbrains.com/lp/mono/
+  "buffer_font_size": 16,
+  "buffer_font_features": {
+    "calt": false // 禁用连体 如 != 不会变成 =/= 等
+  },
+
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Dracula Solid"
+  },
+
+  "git": {
+    "git_gutter": "tracked_files", // 文件左边显示 git gutter，修改黄色，新增绿色，删除红色等
+    "inline_blame": {
+      // 在聚焦行显示 git blame
+      "enabled": false, // 是否显示
+      "delay_ms": 2000, // 延迟显示
+      "show_commit_summary": true // 显示摘要
+    }
+  },
+
+  "git_panel": {
+    "button": true,
+    "dock": "left"
+  },
+
+  "terminal": {
+    "env": {
+      // 设置终端的环境变量
+      "key": "value",
+      "EDITOR": "zed --wait"
+    },
+    "shell": "system" // 使用系统默认的shell，通常是 /etc/passwd 文件
+  },
+
+  "project_panel": {
+    "dock": "left", // 文件目录位置
+    "git_status": true, // git 状态
+    "indent_size": 23, // 缩进尺寸，像素为单位
+    "indent_guides": {
+      // 缩进线
+      "show": "always"
+    },
+    "scrollbar": {
+      "show": "auto" // 滚动条，
+    }
+  },
+
+  "outline_panel": {
+    // 大纲面板
+    "button": true // 是否显示按钮
+  },
+
+  "collaboration_panel": {
+    // 协作面板
+    "button": false
+  },
+
+  "unnecessary_code_fade": 0.7, // 淡化未使用的代码
+  "current_line_highlight": "all", // 当前行高亮
+  "lsp_highlight_debounce": 75, // LSP 提示防抖延迟，ms
+
+  "toolbar": {
+    // Whether to show breadcrumbs.
+    "breadcrumbs": true,
+    // Whether to show quick action buttons.
+    "quick_actions": false,
+    // Whether to show the Selections menu in the editor toolbar
+    "selections_menu": false
+  },
+  "title_bar":{
+    "show_branch_icon": true
+  },
+  "tabs": {
+    "git_status": true
+  },
+  // Other
+  "confirm_quit": true,
+  "edit_predictions": {
+    "disabled_globs": [".env"]
+  },
+
+  "notification_panel": {
+    // Whether to show the notification panel button in the status bar.
+    "button": false
+  },
+  "format_on_save": "on",
+  "formatter": "prettier",
+  "prettier": {
+    "allowed": true,
+    "tabWidth": 2,
+    "bracketSpacing": true,
+    "semi": false,
+    "jsxSingleQuote": true,
+    "singleQuote": true
+  }
+}

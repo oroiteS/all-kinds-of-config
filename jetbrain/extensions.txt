@@ -1,0 +1,9 @@
+atom material icons
+codeglance pro
+ideavim
+ideavim-easymotion
+ideavimextension
+material theme ui light
+rainbow brackets lite
+trae ai
+which-key
