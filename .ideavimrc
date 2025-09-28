@@ -18,7 +18,7 @@ set surround
 " 按下 <leader> 后弹出浮动提示窗，告诉你后面还能按什么，降低记忆负担
 set which-key
 " 启用超时并设置延时，便于 which-key 弹窗
-set timeout timeoutlen=500
+set timeout timeoutlen=5000
 " 需要 ideavim-extension：退出插入模式时自动切回英文，再进入插入模式时恢复中文
 set keep-english-in-normal-and-restore-in-insert
 
