@@ -1,0 +1,103 @@
+{
+  "files.autoSave": "afterDelay",
+  "files.autoGuessEncoding": true,
+  "workbench.list.smoothScrolling": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.mouseWheelZoom": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "editor.guides.bracketPairs": true,
+  //"editor.bracketPairColorization.enabled": true, (此设置vscode在较新版本已默认开启)
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.suggestSelection": "recentlyUsed",
+  "window.dialogStyle": "custom",
+  "debug.showBreakpointsInOverviewRuler": true,
+  "extensions.ignoreRecommendations": true,
+  "explorer.confirmDelete": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Dracula Theme Soft",
+  "workbench.secondarySideBar.defaultVisibility": "visible",
+  "terminal.integrated.profiles.windows": {
+    "nu": {
+      "path": "/usr/bin/nu"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "nu",
+
+  "explorer.confirmDragAndDrop": false,
+  "c-cpp-compile-run.cpp-compiler": "/usr/bin/g++",
+  "c-cpp-compile-run.output-location": "",
+  "git.openRepositoryInParentFolders": "never",
+
+  // ==================== 1. 基础 Vim 行为 ====================
+  "vim.leader": " ", // 空格做 <leader>
+  "vim.useSystemClipboard": true, // y/p 与系统互通（等价 unnamedplus）
+  "vim.incsearch": true, // 实时搜索高亮
+  "vim.ignorecase": true, // 默认忽略大小写
+  "vim.smartcase": true, // 有大写字母时自动敏感
+  "vim.hlsearch": true, // 搜索结果常驻高亮
+  "vim.easymotion": true, // 双击 <leader><leader> 跳转
+  "vim.surround": true, // cs"'  ys]  ds" 等环绕命令
+  "vim.highlightedyank.enable": true, // 复制后闪一下
+  "vim.highlightedyank.duration": 400, // 闪 400 ms
+
+  // 让 VS Code 接管这几个 Ctrl 键，Vim 不再拦截
+  "vim.handleKeys": {
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-a>": false,
+    "<C-x>": false
+  },
+
+  // ==================== 2. 插入模式映射 ====================
+  "vim.insertModeKeyBindings": [
+    { "before": ["j", "j"], "after": ["<Esc>"] }, // jj 退到普通模式
+    { "before": ["<C-l>"], "after": ["<Right>"] }, // Ctrl-hjkl 方向
+    { "before": ["<C-h>"], "after": ["<Left>"] },
+    { "before": ["<C-j>"], "after": ["<Down>"] },
+    { "before": ["<C-k>"], "after": ["<Up>"] },
+    // 解决「插入模式下按空格会触发 leader」的小别扭
+    { "before": [" "], "after": [" "] }
+  ],
+
+  // ==================== 3. 普通模式映射 ====================
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // 快速取消搜索结果高亮
+    { "before": ["<C-n>"], "commands": [":nohl"] },
+    // 把原生 Ex 模式入口 Q 改成格式化当前行/选区
+    { "before": ["Q"], "after": ["g", "q"] },
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatDocument"]
+    }
+  ],
+
+  // ==================== 4. 可视模式映射 ====================
+  "vim.visualModeKeyBindings": [
+    // 防止 p 粘贴时把被选内容冲掉（自动变成 P）
+    { "before": ["p"], "after": ["P"] }
+  ],
+
+  // ==================== 5. 命令行模式映射 ====================
+  "vim.commandLineModeKeyBindingsNonRecursive": [],
+  "editor.lineNumbers": "on",
+  "editor.cursorSurroundingLines": 10,
+  "vim.smartRelativeLine": true,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
