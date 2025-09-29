@@ -22,13 +22,6 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Dracula Theme Soft",
   "workbench.secondarySideBar.defaultVisibility": "visible",
-  "terminal.integrated.profiles.windows": {
-    "nu": {
-      "path": "/usr/bin/nu"
-    }
-  },
-  "terminal.integrated.defaultProfile.windows": "nu",
-
   "explorer.confirmDragAndDrop": false,
   "c-cpp-compile-run.cpp-compiler": "/usr/bin/g++",
   "c-cpp-compile-run.output-location": "",
@@ -99,5 +92,7 @@
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "terminal.external.linuxExec": "/usr/bin/nu",
+  "terminal.integrated.defaultProfile.linux": "nu (2)"
 }
