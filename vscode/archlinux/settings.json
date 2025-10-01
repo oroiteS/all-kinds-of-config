@@ -21,7 +21,7 @@
   "explorer.confirmDelete": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Dracula Theme Soft",
-  "workbench.secondarySideBar.defaultVisibility": "visible",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
   "explorer.confirmDragAndDrop": false,
   "c-cpp-compile-run.cpp-compiler": "/usr/bin/g++",
   "c-cpp-compile-run.output-location": "",
@@ -94,5 +94,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "terminal.external.linuxExec": "/usr/bin/nu",
-  "terminal.integrated.defaultProfile.linux": "nu (2)"
+  "terminal.integrated.defaultProfile.linux": "nu (2)",
+  "chat.disableAIFeatures": true
 }
