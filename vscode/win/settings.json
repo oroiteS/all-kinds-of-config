@@ -100,5 +100,8 @@
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "C_Cpp.copilotHover": "disabled",
+  "chat.disableAIFeatures": true
 }
