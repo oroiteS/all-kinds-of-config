@@ -24,7 +24,6 @@
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "explorer.confirmDragAndDrop": false,
   "c-cpp-compile-run.cpp-compiler": "/usr/bin/g++",
-  "c-cpp-compile-run.output-location": "",
   "git.openRepositoryInParentFolders": "never",
 
   // ==================== 1. 基础 Vim 行为 ====================
@@ -95,5 +94,6 @@
   },
   "terminal.external.linuxExec": "/usr/bin/nu",
   "terminal.integrated.defaultProfile.linux": "nu (2)",
-  "chat.disableAIFeatures": true
+  "chat.disableAIFeatures": true,
+  "editor.fontFamily": "'Maple Mono','Droid Sans Mono', 'monospace', monospace"
 }
